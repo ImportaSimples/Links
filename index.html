@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Importa Simples</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,12 +13,12 @@
     }
 
     html, body {
-      height: 100%;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto;
       font-family: Arial, sans-serif;
     }
 
-    /* 🔥 BANNER DE PROMOÇÃO FIXO */
     .promo-banner {
       position: fixed;
       top: 0;
@@ -34,12 +35,8 @@
     }
 
     @keyframes slideDown {
-      from {
-        transform: translateY(-100%);
-      }
-      to {
-        transform: translateY(0);
-      }
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
     }
 
     .video-background {
@@ -54,29 +51,27 @@
     }
 
     .content {
-      position: absolute;
-      top: 55%; /* levemente abaixo do banner */
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin-top: 120px;
       text-align: center;
       color: #fff;
       width: 90%;
       max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .logo img {
       width: 500px;
       max-width: 100%;
-      margin-bottom: 0px;
+      margin-bottom: 20px;
     }
 
-    .content h1 {
+    h1 {
       font-size: 3rem;
-      font-weight: bold;
       margin-bottom: 0.5rem;
     }
 
-    .content p {
+    p {
       font-size: 1.4rem;
       margin-bottom: 2rem;
     }
@@ -86,6 +81,7 @@
       flex-direction: column;
       align-items: center;
       gap: 15px;
+      margin-bottom: 60px;
     }
 
     .button {
@@ -105,6 +101,10 @@
       backdrop-filter: blur(10px);
     }
 
+    .button i {
+      margin-right: 10px;
+    }
+
     .button:nth-child(1) {
       border-image: linear-gradient(90deg, #4fc3f7, #1976d2) 1;
     }
@@ -119,6 +119,11 @@
 
     .button:nth-child(4) {
       border-image: linear-gradient(90deg, #3949ab, #1a237e) 1;
+    }
+
+    .extra-button {
+      border-image: linear-gradient(90deg, #00c853, #64dd17) 1;
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
     .button::after {
@@ -136,34 +141,42 @@
       box-shadow: 0 0 15px #9b39fd;
     }
 
+    section {
+      position: relative;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      max-width: 1000px;
+      margin: 0 auto 40px auto;
+    }
+
     @media (max-width: 768px) {
-      .logo img {
-        width: 240px;
-      }
-
-      .button {
-        width: 260px;
-        font-size: 1rem;
-      }
-
-      .content h1 {
-        font-size: 2rem;
-      }
-
-      .content p {
-        font-size: 1rem;
-      }
+      .logo img { width: 240px; }
+      .button { width: 260px; font-size: 1rem; }
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 🔥 BLOCO DE AVISO PROMOCIONAL -->
+  <!-- 🔥 PROMOÇÃO -->
   <div class="promo-banner">
     🤑 PROMOÇÃO ATIVA! APENAS ALGUMAS PEÇAS NO CATÁLOGO!
   </div>
 
-  <!-- 🎥 VÍDEO DE FUNDO -->
+  <!-- 🎥 VÍDEO OU IMAGEM DE FUNDO -->
   <video autoplay muted loop class="video-background">
     <source src="videoOF.mp4" type="video/mp4">
     Seu navegador não suporta vídeos HTML5.
@@ -175,31 +188,94 @@
       <img src="logo.png" alt="Logo da Marca" />
     </div>
 
-    <h1>Bem vindo! </h1>
+    <h1>Bem-vindo!</h1>
     <p>Visite nossa loja e nosso catálogo novo</p>
 
     <div class="buttons">
-      <a href="https://api.whatsapp.com/send/?phone=5551982850122&text=Oi%Tudo20%bem?" class="button">Contato</a>
-      <a href="https://cornflowerblue-starling-836420.hostingersite.com/produtos" class="button">Catálogo</a>
-      <a href="https://api.whatsapp.com/send/?phone=5551982850122&text=Oi%Tudo20%bem?20%Gostaria20%de20%solicitar20%uma%parceiria." class="button">Parcerias</a>
-      <a href="https://cornflowerblue-starling-836420.hostingersite.com/" class="button">Site</a>
+      <a href="https://api.whatsapp.com/send/?phone=5551982850122&text=Oi%Tudo20%bem?" class="button">
+        <i class="fab fa-whatsapp"></i> Contato
+      </a>
+
+      <a href="https://cornflowerblue-starling-836420.hostingersite.com/produtos" class="button">
+        <i class="fas fa-box-open"></i> Catálogo
+      </a>
+
+      <a href="https://api.whatsapp.com/send/?phone=5551982850122&text=Oi%Tudo20%bem?%20Gostaria%20de%20solicitar%20uma%20parceria." class="button">
+        <i class="fas fa-handshake"></i> Parcerias
+      </a>
+
+      <a href="https://cornflowerblue-starling-836420.hostingersite.com/" class="button">
+        <i class="fas fa-globe"></i> Site
+      </a>
+
+      <!-- NOVO BOTÃO COM ÍCONE -->
+      <a href="#linktree-info" class="button extra-button">
+        <i class="fas fa-info-circle"></i> Saiba como funciona
+      </a>
     </div>
   </div>
 
-  <!-- 🔽 SEÇÃO SOBRE O LINKTREE E A IMPORTA SIMPLES -->
-<section style="position: relative; z-index: 2; background-color: rgba(0, 0, 0, 0.85); color: white; padding: 60px 20px; text-align: center;">
-  <div style="max-width: 1000px; margin: 0 auto;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Como funciona o nosso Linktree?</h2>
-    <p style="font-size: 1.2rem; margin-bottom: 40px;">
-      Este Linktree foi criado para facilitar sua navegação e tornar sua experiência mais simples e rápida. Aqui você encontra, em um só lugar, todos os acessos importantes para falar com a gente, visitar nosso catálogo, fazer parcerias ou conhecer melhor nossa loja.
+  <!-- 🔽 SEÇÃO SOBRE A IMPORTA SIMPLES -->
+  <section id="linktree-info">
+    <h2>Como funciona o nosso Linktree?</h2>
+    <p>
+      Este Linktree foi criado para facilitar sua navegação e tornar sua experiência mais simples e rápida.
+      Aqui você encontra, em um só lugar, todos os acessos importantes para falar com a gente, visitar nosso catálogo, fazer parcerias ou conhecer melhor nossa loja.
     </p>
 
-    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Sobre a Importa Simples</h2>
-    <p style="font-size: 1.2rem;">
-      A <strong>Importa Simples</strong> nasceu para trazer os melhores produtos importados direto até você, com preços acessíveis, atendimento direto pelo WhatsApp, e entregas para todo o Brasil. Nosso foco é simplicidade, agilidade e produtos de qualidade que você confia. 🚀
+    <h2>Sobre a Importa Simples</h2>
+    <p>
+      A <strong>Importa Simples</strong> nasceu para trazer os melhores produtos importados direto até você, com preços acessíveis, atendimento direto pelo WhatsApp, e entregas para todo o Brasil.
+      Nosso foco é simplicidade, agilidade e produtos de qualidade que você confia. 🚀
     </p>
-  </div>
-</section>
+  </section>
+
+<!-- ✅ Notificação estilo WhatsApp -->
+<div id="whatsapp-notification" style="
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #7b1fa2;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+">
+  <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i>
+  <span>Oi! Posso te ajudar?</span>
+</div>
+
+<!-- ✅ Font Awesome + Script de Animação -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+<script>
+  setTimeout(() => {
+    const notif = document.getElementById('whatsapp-notification');
+    notif.style.display = 'flex';
+    setTimeout(() => {
+      notif.style.opacity = '1';
+      notif.style.transform = 'translateY(0)';
+    }, 50);
+  }, 6000); // aparece após 6 segundos
+
+  // Redireciona ao clicar
+  document.addEventListener('DOMContentLoaded', () => {
+    const box = document.getElementById('whatsapp-notification');
+    box.addEventListener('click', () => {
+      window.open('https://api.whatsapp.com/send/?phone=5551982850122&text=Olá!%20Quero%20falar%20com%20a%20Importa%20Simples', '_blank');
+    });
+  });
+</script>
 
 
 </body>
