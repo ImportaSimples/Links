@@ -13,8 +13,10 @@
 
     html, body {
       height: 100%;
-      overflow: hidden;
       font-family: Arial, sans-serif;
+      background: url('IMAGEM FUNDO.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
     }
 
     /* 🔥 BANNER DE PROMOÇÃO FIXO */
@@ -42,20 +44,9 @@
       }
     }
 
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(45%);
-    }
-
     .content {
       position: absolute;
-      top: 55%; /* levemente abaixo do banner */
+      top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
@@ -65,9 +56,9 @@
     }
 
     .logo img {
-      width: 400px;
+      width: 500px;
       max-width: 100%;
-      margin-bottom: 0px;
+      margin-bottom: 20px;
     }
 
     .content h1 {
@@ -163,19 +154,13 @@
     🤑 PROMOÇÃO ATIVA! APENAS ALGUMAS PEÇAS NO CATÁLOGO!
   </div>
 
-  <!-- 🎥 VÍDEO DE FUNDO -->
-  <video autoplay muted loop class="video-background">
-    <source src="videoOFF.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos HTML5.
-  </video>
-
   <!-- 🔽 CONTEÚDO PRINCIPAL -->
   <div class="content">
     <div class="logo">
       <img src="logo.png" alt="Logo da Marca" />
     </div>
 
-    <h1>Bem vindo! </h1>
+    <h1>Bem-vindo!</h1>
     <p>Visite nossa loja e nosso catálogo novo</p>
 
     <div class="buttons">
